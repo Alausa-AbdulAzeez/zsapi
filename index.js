@@ -40,6 +40,7 @@ app.use("/api/users/", userRoute);
 
 // const aaa = path.resolve(__dirname, "client/pages/home/home.js");
 // console.log(aaa);
+// "heroku-postbuild": "cd client && npm install && npm run build"
 
 const PORT = 5000;
 app.listen(process.env.PORT || PORT, () => {
