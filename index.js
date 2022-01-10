@@ -8,12 +8,17 @@ const productRoute = require("./routes/product");
 const userRoute = require("./routes/user");
 const path = require("path");
 
+dotenv.config();
+
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
   next();
 });
-
-dotenv.config();
 
 // MIDDLEWARE
 // app.use(function (req, res, next) {
@@ -28,7 +33,7 @@ dotenv.config();
 
 //   next();
 // });
-app.use(cors());
+// app.use(cors({ origin: "*" }));
 app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
