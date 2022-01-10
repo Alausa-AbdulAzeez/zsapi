@@ -10,18 +10,18 @@ const path = require("path");
 
 dotenv.config();
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://alausa-abdulazeez.github.io/"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  );
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     "Access-Control-Allow-Origin",
+//     "https://alausa-abdulazeez.github.io/"
+//   );
+//   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "X-Requested-With,content-type"
+//   );
+//   next();
+// });
 
 // MIDDLEWARE
 // app.use(function (req, res, next) {
@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 
 //   next();
 // });
-// app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
