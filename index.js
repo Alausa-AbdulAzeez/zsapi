@@ -38,7 +38,7 @@ dotenv.config();
 
 // MIDDLEWARE
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "zsapi.herokuapp.com");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Content-Type, Access-Control-Allow-Origin"
