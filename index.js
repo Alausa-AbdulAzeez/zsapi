@@ -48,7 +48,9 @@ dotenv.config();
 
 //   next();
 // });
-app.use(cors({ origin: "https://alausa-abdulazeez.github.io" }));
+app.use(
+  cors({ "Access-Control-Allow-Origin": "https://alausa-abdulazeez.github.io" })
+);
 app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
