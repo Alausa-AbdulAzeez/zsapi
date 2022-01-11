@@ -40,7 +40,7 @@ dotenv.config();
 app.use(function (req, res, next) {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "Origin: https://priceless-varahamihira-305b53.netlify.app/"
+    "https://priceless-varahamihira-305b53.netlify.app/"
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
