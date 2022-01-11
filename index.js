@@ -42,10 +42,7 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Origin",
     "https://priceless-varahamihira-305b53.netlify.app"
   );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Access-Control-Allow-Origin"
-  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
