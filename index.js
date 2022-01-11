@@ -57,7 +57,7 @@ app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
 // ROUTES
-app.use("/api/auth/", authRoute);
+app.use("/api/auth/", cors(), authRoute);
 app.use("/api/products/", productRoute);
 app.use("/api/users/", userRoute);
 
