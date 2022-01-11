@@ -25,7 +25,7 @@ dotenv.config();
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://alausa-abdulazeez.github.io"
+    "https://alausa-abdulazeez.github.io/pages/login/login.html"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
