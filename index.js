@@ -8,7 +8,7 @@ const productRoute = require("./routes/product");
 const userRoute = require("./routes/user");
 const path = require("path");
 
-app.use(cors());
+app.use(cors({ Origin: "https://priceless-varahamihira-305b53.netlify.app" }));
 dotenv.config();
 
 // app.use((req, res, next) => {
@@ -57,7 +57,7 @@ app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
 // ROUTES
-app.use("/api/auth/", cors(), authRoute);
+app.use("/api/auth/", authRoute);
 app.use("/api/products/", productRoute);
 app.use("/api/users/", userRoute);
 
