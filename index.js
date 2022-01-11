@@ -36,21 +36,23 @@ dotenv.config();
 // });
 
 // MIDDLEWARE
-// app.use(function (req, res, next) {
-//   res.setHeader(
-//     "Access-Control-Allow-Origin",
-//     "https://alausa-abdulazeez.github.io"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://alausa-abdulazeez.github.io"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Access-Control-Allow-Origin"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+  );
 
-//   next();
-// });
-app.use(
-  cors({ "Access-Control-Allow-Origin": "https://alausa-abdulazeez.github.io" })
-);
+  next();
+});
+// app.use(cors());
 app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
