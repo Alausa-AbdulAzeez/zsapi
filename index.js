@@ -50,7 +50,6 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
   );
-  res.setHeader("Access-Control-Allow-Credentials", true);
 
   next();
 });
