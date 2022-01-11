@@ -1,6 +1,6 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
+const cors = require("cors");
 const dotenv = require("dotenv");
 const pool = require("./db/db");
 const authRoute = require("./routes/auth");
@@ -8,6 +8,7 @@ const productRoute = require("./routes/product");
 const userRoute = require("./routes/user");
 const path = require("path");
 
+app.use(cors());
 dotenv.config();
 
 // app.use((req, res, next) => {
@@ -36,23 +37,22 @@ dotenv.config();
 // });
 
 // MIDDLEWARE
-app.use(function (req, res, next) {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://alausa-abdulazeez.github.io"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Access-Control-Allow-Origin"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-  );
+// app.use(function (req, res, next) {
+//   res.setHeader(
+//     "Access-Control-Allow-Origin",
+//     "https://alausa-abdulazeez.github.io"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Content-Type, Access-Control-Allow-Origin"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+//   );
 
-  next();
-});
-// app.use(cors());
+//   next();
+// });
 app.use(express.json());
 // app.use("Access-Control-Allow-Origin", "*")
 
