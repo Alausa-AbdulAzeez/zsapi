@@ -1,11 +1,3 @@
-const cors = require("cors");
-app.use(
-  cors({
-    origin: "https://priceless-varahamihira-305b53.netlify.app",
-    credentials: true,
-  })
-);
-
 const router = require("express").Router();
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
@@ -16,7 +8,7 @@ const pool = require("../db/db");
 
 router.post("/signup", async (req, res) => {
   try {
-    // await client.connect();
+    await pool.connect();
     const { email, profile_picture, isAdmin, isAttendant } = req.body;
     const password = CryptoJS.AES.encrypt(
       req.body.password,
@@ -37,7 +29,7 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    // await client.connect();
+    await pool.connect();
     const { email } = await req.body;
     const user = await pool.query(`SELECT * FROM personnel WHERE email = $1`, [
       email,
