@@ -1,3 +1,11 @@
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://priceless-varahamihira-305b53.netlify.app",
+    credentials: true,
+  })
+);
+
 const router = require("express").Router();
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
