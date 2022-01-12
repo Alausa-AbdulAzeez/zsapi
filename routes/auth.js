@@ -66,7 +66,7 @@ router.post("/login", async (req, res) => {
     const { password, ...others } = user.rows[0];
     res.status(201).json({ ...others, accessToken });
   } catch (error) {
-    // res.json(error);
+    res.send(error);
   }
   // client.end();
 });
