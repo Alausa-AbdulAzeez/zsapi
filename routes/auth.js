@@ -31,7 +31,7 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    await pool.connect();
+    // await pool.connect();
     const { email } = await req.body;
     const user = await pool.query(`SELECT * FROM personnel WHERE email = $1`, [
       email,
@@ -62,7 +62,7 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     res.send(error);
   }
-  pool.end();
+  // pool.end();
 });
 
 module.exports = router;
