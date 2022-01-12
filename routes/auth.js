@@ -8,7 +8,7 @@ const pool = require("../db/db");
 
 router.post("/signup", async (req, res) => {
   try {
-    await pool.connect();
+    // await pool.connect();
     const { email, profile_picture, isAdmin, isAttendant } = req.body;
     const password = CryptoJS.AES.encrypt(
       req.body.password,
@@ -16,7 +16,9 @@ router.post("/signup", async (req, res) => {
     ).toString();
     const newPersonnel = await pool.query(
       `INSERT INTO personnel (email, password, profile_picture, isAdmin,isAttendant) VALUES($1,$2,$3,$4,$5) RETURNING *`,
-      [email, password, profile_picture, isAdmin, isAttendant]
+      [email, password, profile_picture, isAdmin, isAttendant][
+        ("tayo@gmail.com", "tayo", "true", "true")
+      ]
     );
     res.status(201).json(newPersonnel.rows[0]);
   } catch (error) {
@@ -60,7 +62,7 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     res.send(error);
   }
-  pool.end();
+  // pool.end();
 });
 
 module.exports = router;
