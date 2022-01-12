@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://priceless-varahamihira-305b53.netlify.app",
+    origin: "https://alausa-abdulazeez.github.io",
     credentials: true,
   })
 );
