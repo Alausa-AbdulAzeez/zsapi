@@ -62,7 +62,7 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     res.send(error);
   }
-  // pool.end();
+  pool.end();
 });
 
 module.exports = router;
