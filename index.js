@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://priceless-varahamihira-305b53.netlify.app",
+    credentials: true,
+  })
+);
 const dotenv = require("dotenv");
 const pool = require("./db/db");
 const authRoute = require("./routes/auth");
@@ -8,12 +14,6 @@ const productRoute = require("./routes/product");
 const userRoute = require("./routes/user");
 const path = require("path");
 
-app.use(
-  cors({
-    origin: "https://priceless-varahamihira-305b53.netlify.app",
-    credentials: true,
-  })
-);
 dotenv.config();
 
 // app.use((req, res, next) => {
